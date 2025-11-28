@@ -1,0 +1,59 @@
+/* ================================================= */
+/* 1. Reset Básico para ocupar todo el viewport */
+/* ================================================= */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================================= */
+/* 2. Fondo Animado de Degradado */
+/* ================================================= */
+.animated-background {
+  min-height: 100vh; /* Asegura que cubra al menos toda la altura de la pantalla */
+  width: 100%;
+
+  /* Define un degradado con cuatro colores de la paleta Bootstrap */
+  background: linear-gradient(
+    -45deg,
+    #007bff,  /* Primary Blue */
+    #28a745,  /* Success Green */
+    #ffc107,  /* Warning Yellow */
+    #dc3545   /* Danger Red */
+  );
+  
+  /* Ajusta el tamaño del fondo para que el degradado sea grande y pueda moverse */
+  background-size: 400% 400%; 
+
+  /* Aplica la animación que se define abajo */
+  animation: gradientAnimation 15s ease infinite; 
+}
+
+/* Define el movimiento del degradado */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%; /* Inicia en la izquierda */
+  }
+  50% {
+    background-position: 100% 50%; /* Se mueve a la derecha */
+  }
+  100% {
+    background-position: 0% 50%; /* Vuelve a empezar */
+  }
+}
+
+/* ================================================= */
+/* 3. Estilo para el Contenido Principal */
+/* ================================================= */
+/* Esta clase envuelve las Routes y asegura que el contenido (tablas, formularios) 
+   esté por encima del fondo y tenga el padding adecuado. */
+.main-content {
+  position: relative; 
+  z-index: 1; /* Asegura que esté sobre el fondo */
+  padding-top: 20px; /* Pequeño espacio debajo del Navbar */
+  padding-bottom: 50px;
+}
+
+
+
